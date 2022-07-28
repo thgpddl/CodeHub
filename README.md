@@ -6,8 +6,10 @@
 - [深度可分离卷积](https://github.com/thgpddl/CodeHub/blob/main/Pytorches/DepthwiseSeparableConvolution.py)
 
 # 一些工具（Tools）
--[Base64](https://github.com/thgpddl/CodeHub/tree/main/Tools/Base64)
+- [Base64](https://github.com/thgpddl/CodeHub/tree/main/Tools/Base64)
 
--[MQTT](https://github.com/thgpddl/CodeHub/tree/main/Tools/MQTT)
+- [MQTT](https://github.com/thgpddl/CodeHub/tree/main/Tools/MQTT)
 
--[MySQLRW：MySQL数据库读写](https://github.com/thgpddl/CodeHub/tree/main/Tools/MySQLRW)
+- [MySQLRW：MySQL数据库读写](https://github.com/thgpddl/CodeHub/tree/main/Tools/MySQLRW)
+
+- [python操作邮件发送](https://github.com/thgpddl/CodeHub/tree/main/Tools/email)
