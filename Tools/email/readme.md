@@ -1,1 +1,1 @@
-解读文章移步:[]()
+解读文章移步:[python发送邮件](https://blog.csdn.net/qq_40243750/article/details/126032582?csdn_share_tail=%7B%22type%22%3A%22blog%22%2C%22rType%22%3A%22article%22%2C%22rId%22%3A%22126032582%22%2C%22source%22%3A%22qq_40243750%22%7D&ctrtid=H9lNH)
