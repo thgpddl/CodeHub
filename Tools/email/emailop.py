@@ -17,20 +17,21 @@ class EmailOP:
         self.smtp.connect(host=host, port=port)  # 链接到服务器
         self.smtp.login(user=self.user, password=self.password)  # 登录自己邮箱账号
 
-    def send(self, From, To, Subject, Context):
+    def send(self, From, To, Subject, Context, to_addrs):
         """
         Context：邮件正文
         From：发送者昵称（随便取）
         To：接收者昵称（随便取）
         Subject：邮件主题
+        to_addrs: 收件人邮箱地址
         """
         message = MIMEText(Context, 'plain', 'utf-8')
         message['From'] = Header(From, 'utf-8')
         message['To'] = Header(To, 'utf-8')
         message['Subject'] = Header(Subject, 'utf-8')
-        self.smtp.sendmail(from_addr="fairy12138@126.com", to_addrs="353254167@qq.com", msg=message.as_string())
+        self.smtp.sendmail(from_addr="fairy12138@126.com", to_addrs=to_addrs, msg=message.as_string())
 
 # 连接服务器并登录自己的邮箱账户
 emailop = EmailOP(host="smtp.126.com", port=25, user="fairy135158@126.com", password="UUSCLRAZVPSYGVNA")
 # 发送一封邮件
-emailop.send(From="hyj", To="qq", Subject="test", Context="python test")
+emailop.send(From="hyj", To="qq", Subject="test", Context="python test", to_addrs="6516161615@qq.com")
