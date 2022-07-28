@@ -31,5 +31,5 @@ class EmailOP:
         self.smtp.sendmail(from_addr="fairy12138@126.com", to_addrs="353254167@qq.com", msg=message.as_string())
 
 
-emailop = EmailOP(host="smtp.126.com", port=25, user="fairy12138@126.com", password="UUSCLRAZVPSYGVNA")
+emailop = EmailOP(host="smtp.126.com", port=25, user="fairy135158@126.com", password="UUSCLRAZVPSYGVNA")
 emailop.send(From="hyj", To="qq", Subject="test", Context="python test")
