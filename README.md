@@ -5,6 +5,7 @@
 # DeepLearn相关代码（DeepLearn）
 - [深度可分离卷积](https://github.com/thgpddl/CodeHub/blob/main/Pytorches/DepthwiseSeparableConvolution.py)
 - [学习率衰减：step、cos、linear、schedule](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/lr_decay.py)
+- [模型参数初始化](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/_initialize_weights.py)
 
 # 一些工具（Tools）
 - [Base64](https://github.com/thgpddl/CodeHub/tree/main/Tools/Base64)
