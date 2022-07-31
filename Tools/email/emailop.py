@@ -29,7 +29,7 @@ class EmailOP:
         message['From'] = Header(From, 'utf-8')
         message['To'] = Header(To, 'utf-8')
         message['Subject'] = Header(Subject, 'utf-8')
-        self.smtp.sendmail(from_addr="fairy12138@126.com", to_addrs=to_addrs, msg=message.as_string())
+        self.smtp.sendmail(from_addr=self.user, to_addrs=to_addrs, msg=message.as_string())
 
 # 连接服务器并登录自己的邮箱账户
 emailop = EmailOP(host="smtp.126.com", port=25, user="fairy135158@126.com", password="UUSCLRAZVPSYGVNA")
