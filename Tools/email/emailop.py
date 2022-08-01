@@ -26,9 +26,12 @@ class EmailOP:
         to_addrs: 收件人邮箱地址
         """
         message = MIMEText(Context, 'plain', 'utf-8')
-        message['From'] = Header(From, 'utf-8')
-        message['To'] = Header(To, 'utf-8')
-        message['Subject'] = Header(Subject, 'utf-8')
+#         message['From'] = Header(From, 'utf-8')
+        message['From'] = Header(From)
+#         message['To'] = Header(To, 'utf-8')
+        message['To'] = Header(To)
+#         message['Subject'] = Header(Subject, 'utf-8')
+        message['Subject'] = Header(Subject)
         self.smtp.sendmail(from_addr=self.user, to_addrs=to_addrs, msg=message.as_string())
 
 # 连接服务器并登录自己的邮箱账户
