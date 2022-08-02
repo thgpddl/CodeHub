@@ -22,22 +22,19 @@ def _initialize_weights(self):
                 m.bias.data.zero_()
  
 # pp版本
+# https://github.com/PaddleEdu/OCR-models-PaddlePaddle/blob/6f075dce5e53298e78c613a43ae4a7571a3b92c2/PSENet/models/backbone/resnet.py
 def _initialize_weights(self):
     for m in self.sublayers():
         if isinstance(m, nn.Conv2D):
             """
             目标：Conv2D初始化，weight=normal(mean=0,std=math.sqrt(2. / n)),bias=0
             """
-            n = m._kernel_size[0] * m._kernel_size[1] * m._out_channels
-            weight=paddle.normal(mean=0.0, std=math.sqrt(2. / n), shape=m.weight.shape)
-            d = collections.OrderedDict()
-            d['weight']=weight
-            m.set_dict(d)
+            n=m.weight.shape[0]*m.weight.shape[1]*m.weight.shape[2]
+            v=np.random.normal(loc=0.,scale=np.sqrt(2./n),size=m.weight.shape).astype("float32")
+            m.weight.set_value(v)
             if m.bias is not None:  # 如果有bias则全重设为0
                 bias = paddle.zeros_like(m.bias)
-                d = collections.OrderedDict()
-                d['bias'] = bias
-                m.set_dict(d)
+                m.bias.set_value(bias)
         elif isinstance(m, nn.BatchNorm2D):
             """
             目标：BatchNorm2D初始化，weight=1,bias=0
@@ -45,23 +42,16 @@ def _initialize_weights(self):
             # paddle所有原始BatchNorm2D，weight全=1，bias全=0
             # 故以下pp代码执行了但没有什么改变
             weight = paddle.ones_like(m.weight)
-            d = collections.OrderedDict()
-            d['weight'] = weight
-            m.set_dict(d)
+            m.weight.set_value(weight)
+
             bias = paddle.zeros_like(m.bias)
-            d = collections.OrderedDict()
-            d['bias'] = bias
-            m.set_dict(d)
+            m.bias.set_value(bias)
         elif isinstance(m, nn.Linear):
             """
             目标：Linear初始化，weight=normal(mean=0.0, std=0.01),bias=0
             """
             weight = paddle.normal(mean=0.0, std=0.01, shape=m.weight.shape)
-            d = collections.OrderedDict()
-            d['weight'] = weight
-            m.set_dict(d)
+            m.weight.set_value(weight)
             if m.bias is not None:  # 如果有bias则全重设为0
                 bias = paddle.zeros_like(m.bias)
-                d = collections.OrderedDict()
-                d['bias'] = bias
-                m.set_dict(d)
+                m.bias.set_value(bias)
