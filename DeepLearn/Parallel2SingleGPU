@@ -1,0 +1,11 @@
+# 如果是并行训练并保存的checkpoint，在单设备上load_state都会报错，并行的key比单设备的key多"module."，造成加载数据集key不匹配
+# 下面函数通过处理掉并行模型的key的"module."，返回能在单设备上加载的state
+
+def Parallel2SingleGPU(checkpoint_path):
+    Parallel_state = torch.load(checkpoint_path)
+    SingleGPU_state = OrderedDict()
+    for k, v in Parallel_state.items():
+        if k[:7] != 'module.':
+            k = 'module.' + k
+        SingleGPU_state[k] = v
+    return SingleGPU_state
