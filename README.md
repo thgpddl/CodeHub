@@ -8,8 +8,10 @@
 - [模型参数初始化](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/_initialize_weights.py)
 - [Parallel2SingleGPU](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/Parallel2SingleGPU)
 - [LabelMe2VOC](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/LabelMe2VOC.py)
+- [LabelMe2COCO](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/LabelMe2COCO.py)
 - [Label Smooth](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/labelsmoothingcrossentropy.py)
 - [mixup](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/mixup.py)
+
 
 # 一些工具（Tools）
 - [Base64](https://github.com/thgpddl/CodeHub/tree/main/Tools/Base64)
