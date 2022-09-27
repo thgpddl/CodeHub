@@ -35,8 +35,13 @@ class AverageMeter(object):
        
    
 def accuracy(output, target, topk=(1,)):
-    """Computes the precision@k for the specified values of k"""
-    """计算top1或topk的acc"""
+    """
+
+    :param output: net运算输出，shape=(b,cls)
+    :param target: gt标签，shape=(b,)
+    :param topk: (1,) or (1,5) 返回top1或，top1和top5精度
+    :return: 
+    """
     with torch.no_grad():
         maxk = max(topk)
         batch_size = target.size(0)
