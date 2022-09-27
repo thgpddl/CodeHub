@@ -15,6 +15,7 @@
 - - accuracy
 - - AverageMeter
 - [ECA](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/ECA.py)
+- [NVIDIA Dali加载数据(没卵用，加速10%+，但是占用显存，感觉还不如torchvision设置更大bs)](https://github.com/thgpddl/CodeHub/blob/main/DeepLearn/dalidataset.py)
 
 
 # 一些工具（Tools）
